@@ -1,222 +1,440 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TegnoMobile</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="mediaQuerys.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <script src="script.js" defer></script>
-
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyecto de entrenamiento para mi portafolio sobre una tienda online mobile, usando tegnologias de html5, css3, js y bootstrap">
+  <meta name="keywords" content="SubnormaShop, tienda de celulares, celulares, tienda de tegnologia">
+  <title>SubnormaShop</title>
+  <link rel="shortcut icon" href="img/logo/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/mediaQuerys.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+  <script src="JS/script.js" defer></script>
 </head>
 <body>
     <div id="todo">
-        <div id="cabezera">
-            <header class="cabeza">
-                <div id="contenedor-p-logo-header">
-                    <p id="p-titulo-cabeza-01">Tegno</p>
-                    <img src="logo.png" id="logo"></img>
-                    <p id="p-titulo-cabeza-02">Mobile</p>
-                </div>
-                <i class="bi bi-list" id="check"></i>
-            </header>
-            <nav id="nav">
-                <ul>
-                    <li id="nav-p-01"><p data-target="#contenido-01">INICIO</p></li>
-                    <li id="nav-p-02"><p data-target="#contenido-02">CATALOGO</p></li>
-                    <li id="nav-p-03"><p data-target="#contenido-03">CONTACTOS</p></li>
-                </ul>
-                <footer id="footer-nav-MQ">Copyright © KeisubCode</footer>
-            </nav>
+      <div id="cabezera">
+        <header class="cabeza">
+          <div id="contenedor-p-logo-header">
+            <p id="p-titulo-cabeza">SubnormaShop</p>
+          </div>
+          <i class="bi bi-list" id="check"></i>
+        </header>
+        <nav id="nav">
+          <ul>
+            <li id="nav-p-01" data-target="#contenido-01">inicio</li>
+            <li id="nav-p-02" data-target="#contenido-02">catalogo</li>
+            <li id="nav-p-03" data-target="#contenido-03">contactos</li>
+          </ul>
+          <h3 id="footer-nav-MQ">Copyright © SubnormaLynx</h3>
+        </nav>
+      </div>
+
+      <div id="div-carrito">
+        <div id="div-titulo-articulos-carrito">
+          <div id="div-titulo-carrito">
+            <h3 id="titulo-carrito">carrito</h3>
+            <p class="bi-x" id="icon-cerrar-carrito"></p>
+          </div>
+          <div id="div-articulos-carrito">
+            <!-- ESTO SE RELLENARA CON JS -->
+          </div>
+          <div id="div-botones-precio-carrito">
+            <p id="boton-borrar-todo-carrito">eliminar todo</p>
+            <div id="div-precio-comprar-carrito">
+              <p id="precio-total-carrito">
+                total: <b id="precio-carrito">$0</b>
+              </p>
+              <p id="boton-comprar-carrito">comprar</p>
+            </div>
+          </div>
         </div>
-        <div id="contenido">
+      </div>
 
-            <!--CONTENIDO PARA INICIO-->
-            <div data-content id="contenido-01" class="active">
-            <!--filtro-->
-            <div class="filtros">
-                <input type="search" id="buscador" placeholder="Busca entre una gran variedad de productos...">
-                <i id="boton-buscar" class="bi bi-search"></i>
-                <i id="filtrar-icon" class="bi bi-funnel"></i>
-                <i id="carrito-icon" class="bi bi-cart4"><a href="carrito.html"></a></i>
-
-                <div id='div-filtro-parametros'>
-                    <input type="range" name="input-rango-precio" id="input-rango-precio" class="inputs-rango-filtro" min="200" max="50000" value="25000">
-                    <p class="palabra-filtro-guia">Rango de precio</p>
-                    <p class="separador-filtro">_________________</p>
-
-                    <input type="range" name="input-rango-ram" id="input-rango-ram" class="inputs-rango-filtro" min="2" max="200">
-                    <p class="palabra-filtro-guia">Memoria RAM</p>
-                    <p class="separador-filtro">_________________</p>
-
-                    <input type="range" name="input-rango-rom" id="input-rango-rom" class="inputs-rango-filtro" min="4" max="200">
-                    <p class="palabra-filtro-guia">Almacenamiento(ROM)</p>
-                    <p class="separador-filtro">_________________</p>
-
-                    <p class="palabra-filtro-guia">Ordenar por</p>
-
-                    <p id="filtro-precio-menor" class="palabra-filtro">Precio(<)</p>
-                    <p id="flitro-precio-mayor" class="palabra-filtro">Precio(>)</p>
-                    <p id="flitro-nombre-menor" class="palabra-filtro">Nombre(a-z)</p>
-                    <p id="flitro-nombre-mayor" class="palabra-filtro">Nombre(z-a)</p>
-                </div>
+      <div id="contenido">
+        <!--CONTENIDO PARA INICIO-->
+        <div data-content id="contenido-01" class="active">
+          <!--filtro-->
+          <div class="filtros">
+            <div id="div-buscador-boton-filtro">
+              <input
+                type="search"
+                id="buscador"
+                placeholder="Busca entre una gran variedad de marcas..."
+              />
+              <i id="boton-buscar" class="bi bi-search"></i>
             </div>
-            
-            <!--Contenido-->
-            <h2 class="titulo-contenido-inicio">Celulares</h2>
-            <section class="contenido-objetos-inicio">
-                <div class="separacion-celulares">
-                    <div class="slider" id="slider-celulares">
-                        <!--ESTO SE RELLENARA CON JS-->
-                    </div>
-                    <!--BOTONES SLIDER-->
-                    <button class="boton-slider BSLeft" id="boton-left-celulares"><i class="bi bi-caret-left"></i></button>
-                    <button class="boton-slider BSDer" id="boton-right-celulares"><i class="bi bi-caret-right"></i></button>
-                </div>
-
-                <!--separacion de tablets-->
-            <h2 class="titulo-contenido-inicio">Tabletas</h2>
-                <div class="separacion-tabletas">
-                    <div class="slider" id="slider-tabletas">
-                        <!--ESTO SE RELLENARA CON JS-->
-                    </div>
-                    <!--BOTONES SLIDER-->
-                    <button class="boton-slider BSLeft" id="boton-left-tabletas"><i class="bi bi-caret-left"></i></button>
-                    <button class="boton-slider BSDer" id="boton-right-tabletas"><i class="bi bi-caret-right"></i></button>
-                </div>
-
-                <!--Separacion para Accesorios-->
-                <h2 class="titulo-contenido-inicio">Accesorios</h2>
-                <div class="separacion-accesorios">
-                    <div class="slider" id="slider-accesorios">
-                        <!--ESTO SE RELLENARA CON JS-->
-                    </div>
-                    <!--BOTONES SLIDER-->
-                    <button class="boton-slider BSLeft" id="boton-left-accesorios"><i class="bi bi-caret-left"></i></button>
-                    <button class="boton-slider BSDer" id="boton-right-accesorios"><i class="bi bi-caret-right"></i></button>
-                </div>
-                <div class="margen-final-abajo"></div>
-            </section>
+            <div id="div-icon-filtrar-carrito-filtro">
+              <i id="filtrar-icon" class="bi bi-funnel"></i>
+              <i id="carrito-icon" class="bi bi-cart4"></i>
             </div>
 
-            <!--CONTENIDO PARA CATALOGO-->
+            <div id="div-filtro-parametros">
+              <div id="div-max-min-precio">
+                <label class="label-precio-input">
+                  <input
+                    type="number"
+                    name="min-precio-input"
+                    id="min-precio-input"
+                    class="input-precio"
+                  />
+                  Min:
+                </label>
+                <label class="label-precio-input">
+                  <input
+                    type="number"
+                    name="max-precio-input"
+                    id="max-precio-input"
+                    class="input-precio"
+                  />
+                  Max:
+                </label>
+              </div>
+              <div id="div-input-range">
+                <p class="palabra-filtro-guia">Rango de precio</p>
+                <input
+                  type="range"
+                  name="input-rango-ram"
+                  id="input-rango-ram"
+                  class="inputs-rango-filtro"
+                  min="1"
+                  max="8"
+                  value="8"
+                  step="1"
+                  data-from="RAM"
+                />
+                <p class="palabra-filtro-guia">Memoria RAM</p>
 
+                <input
+                  type="range"
+                  name="input-rango-rom"
+                  id="input-rango-rom"
+                  class="inputs-rango-filtro"
+                  min="1"
+                  max="128"
+                  value="128"
+                  step="1"
+                  data-from="ROM"
+                />
+                <p class="palabra-filtro-guia">Almacenamiento(ROM)</p>
 
-            <div data-content id="contenido-02"> 
-                <h2 class="titulo-contenido-catalogo-01">Tenemos gran variedad en marcas de tegnologia como...</h2>
-                <div class="contenido-objetos-catalogo">
-                    <div class="divs-catalogo">
-                        <img src="marcas/AppleM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/logoSam.png" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/SonyM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/GoogleM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/HTCM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/HuaweiM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/LenovoM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/LGM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/MotorolaM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/ZTEM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/AlcatelM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                    <div class="divs-catalogo">
-                        <img src="marcas/OppoM.jpg" alt="" class="imagen-marca-div">
-                    </div>
-                <div class="margen-final-abajo"></div>
-                </div>
-                <aside id="aside-catalogo">
-                    <p>i
-                    m
-                    p
-                    o
-                    r
-                    t
-                    a
-                    d
-                    o
-                    s
-
-                    1
-                    0
-                    0
-                    %
-                        
-                    d
-                    e
-                        
-                    f
-                    a
-                    b
-                    r
-                    i
-                    c
-                    a
-                    </p>
-                </aside>
+                <input
+                  type="range"
+                  name="input-rango-mpx"
+                  id="input-rango-mpx"
+                  class="inputs-rango-filtro"
+                  min="1"
+                  max="48"
+                  value="48"
+                  step="1"
+                  data-from="MPX"
+                />
+                <p class="palabra-filtro-guia">Megapixeles(MPX)</p>
+              </div>
+              <div id="div-boton-filtrar-contenido">
+                <button id="boton-filtrar-contenido">filtrar</button>
+              </div>
             </div>
-            
-            <!--CONTENIDO PARA CONTACTOS-->
-            
-            <div data-content id="contenido-03">
-                <h2 class="titulo-contenido-contactos-01">Ponte en contacto con nosotros para una mejor atencion</h2>
-                <div class="contenido-objetos-contactos">
-                    <div id="contenedor-celular">
-                        <div id="camara-celular"></div>
-                        <div id="contenedor-apps-celular">
-                            <img src="IconsApps/facebook.png" alt="" class="icon-apps-celular IACLeft">
-                            <img src="IconsApps/instagram.png" alt="" class="icon-apps-celular">
-                            <img src="IconsApps/gmail.png" alt="" class="icon-apps-celular IACLeft">
-                            <img src="IconsApps/whatssap.png" alt="" class="icon-apps-celular">
-                            <img src="IconsApps/tik tok.png" alt="" class="icon-apps-celular IACLeft">
-                            <img src="IconsApps/youtube.png" alt="" class="icon-apps-celular">
-                        </div>
-                    </div>
-                    <div id="contenedor-parrafo-imagen">
-                        <p id="p-contactos-01">Somos KeisubCode, un equipo de desarrollo web que tiene una gran capacidad para creacion de paginas web, eccomers, blogs y mas.
-                        </p>
-                        <img src="logo.png" alt="" id="logo-contactos">
-                        <p id="p-contactos-02">Esta pagina solo es una representacion de nuestras habilidades creativas, interactivas y de efectividad ante estos trabajo.<br><br>
-                        Aqui te dejamos nuestros contactos para que puedas obtener una mejor atencion a cuanto detalles de nuestro  trabajo, preguntas y quejas. <br><br>
-                        Oh solo para saber mas sobre nosotros y conocernos.
-                        </p>
-                    </div>
-                    <div id="contenedor-apps-celular-responsive">
-                        <a href="#"><img src="IconsApps/facebook.png" alt="" class="icon-apps-celular"></a>
-                        <a href="#"><img src="IconsApps/instagram.png" alt="" class="icon-apps-celular"></a>
-                        <a href="#"><img src="IconsApps/gmail.png" alt="" class="icon-apps-celular"></a>
-                        <a href="#"><img src="IconsApps/whatssap.png" alt="" class="icon-apps-celular"></a>
-                        <a href="#"><img src="IconsApps/tik tok.png" alt="" class="icon-apps-celular"></a>
-                        <a href="#"><img src="IconsApps/youtube.png" alt="" class="icon-apps-celular"></a>
-                    </div>
-                    
-                    <div id="margen-final-abajo-contactos"></div>
-                </div>
+          </div>
+          <div id="div-filtrado">
+            <div id="div-titulo-filtrado">
+              <h2 class="titulo-contenido-inicio" id="titulo-filtrados">
+                resultados
+              </h2>
+              <p id="boton-regresar-filtrado">
+                <b class="bi-arrow-return-left"></b>
+                Volver al inicio
+              </p>
             </div>
-            
+            <div id="div-resultado-filtrado">
+              <!-- ESTO SE MUESTRA CON JS -->
+            </div>
+          </div>
+
+          <!--Contenido-->
+          <section id="contenido-objetos-inicio">
+            <div id="div-titulo-celulares" class="div-titulo-inicio">
+              <h2 class="titulo-contenido-inicio">celulares</h2>
+            </div>
+            <div
+              id="div-titulo-slider-celulares"
+              class="div-titulo-slider-inicio"
+            >
+              <div class="separacion-articulos">
+                <div class="slider" id="slider-celulares" data-sliderArtClass="Celulares">
+                  <!--ESTO SE RELLENARA CON JS-->
+                </div>
+              </div>
+              <!--BOTONES SLIDER-->
+              <button class="boton-slider BSLeft" id="boton-left-celulares">
+                <i class="bi bi-caret-left"></i>
+              </button>
+              <button class="boton-slider BSDer" id="boton-right-celulares">
+                <i class="bi bi-caret-right"></i>
+              </button>
+            </div>
+
+            <!--separacion de tablets-->
+            <div id="div-titulo-tabletas" class="div-titulo-inicio">
+              <h2 class="titulo-contenido-inicio">tabletas</h2>
+            </div>
+            <div
+              id="div-titulo-slider-tabletas"
+              class="div-titulo-slider-inicio"
+            >
+              <div class="separacion-articulos">
+                <div class="slider" id="slider-tabletas" data-sliderArtClass="Tabletas">
+                  <!--ESTO SE RELLENARA CON JS-->
+                </div>
+              </div>
+              <!--BOTONES SLIDER-->
+              <button class="boton-slider BSLeft" id="boton-left-tabletas">
+                <i class="bi bi-caret-left"></i>
+              </button>
+              <button class="boton-slider BSDer" id="boton-right-tabletas">
+                <i class="bi bi-caret-right"></i>
+              </button>
+            </div>
+
+            <!--Separacion para Accesorios-->
+            <div id="div-titulo-accesorios" class="div-titulo-inicio">
+              <h2 class="titulo-contenido-inicio">accesorios</h2>
+            </div>
+            <div
+              id="div-titulo-slider-accesorios"
+              class="div-titulo-slider-inicio"
+            >
+              <div class="separacion-articulos">
+                <div class="slider" id="slider-accesorios" data-sliderArtClass="Accesorios">
+                  <!--ESTO SE RELLENARA CON JS-->
+                </div>
+              </div>
+              <!--BOTONES SLIDER-->
+              <button class="boton-slider BSLeft" id="boton-left-accesorios">
+                <i class="bi bi-caret-left"></i>
+              </button>
+              <button class="boton-slider BSDer" id="boton-right-accesorios">
+                <i class="bi bi-caret-right"></i>
+              </button>
+            </div>
+            <div class="margen-final-abajo"></div>
+          </section>
         </div>
+
+        <!--CONTENIDO PARA CATALOGO-->
+
+        <div data-content id="contenido-02">
+          <div id="div-filtro-catalogo">
+            <div id="div-titulo-filcat">
+              <div id="div-titulo-filtro-catalogo">
+                <h3 id="titulo-filcat"></h3>
+                <p id="boton-regresar-catalogo">
+                  <b class="bi-arrow-return-left"></b>
+                  Volver al catalogo
+                </p>
+              </div>
+              <div id="div-filcat">
+                <!-- ESTO SE MUESTRA CON JS -->
+              </div>
+            </div>
+          </div>
+          <h2 class="titulo-contenido-catalogo-01">
+            Tenemos gran variedad en marcas de tegnologia como...
+          </h2>
+          <div id="contenido-objetos-catalogo">
+            <div class="divs-catalogo" data-marcaCatalogo="apple">
+              <img
+                src="img/marcas/AppleM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="samsung">
+              <img
+                src="img/marcas/logoSam.png"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="sony">
+              <img src="img/marcas/SonyM.jpg" alt="" class="imagen-marca-div" />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="google">
+              <img
+                src="img/marcas/GoogleM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="htc">
+              <img src="img/marcas/HTCM.jpg" alt="" class="imagen-marca-div" />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="huawei">
+              <img
+                src="img/marcas/HuaweiM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="lenovo">
+              <img
+                src="img/marcas/LenovoM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="lg">
+              <img src="img/marcas/LGM.jpg" alt="" class="imagen-marca-div" />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="motorola">
+              <img
+                src="img/marcas/MotorolaM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="zte">
+              <img src="img/marcas/ZTEM.jpg" alt="" class="imagen-marca-div" />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="alcatel">
+              <img
+                src="img/marcas/AlcatelM.jpg"
+                alt=""
+                class="imagen-marca-div"
+              />
+            </div>
+            <div class="divs-catalogo" data-marcaCatalogo="oppo">
+              <img src="img/marcas/OppoM.jpg" alt="" class="imagen-marca-div" />
+            </div>
+            <div class="margen-final-abajo"></div>
+          </div>
+          <aside id="aside-catalogo">
+            <p class="p-aside-catalogo">i m p o r t a d o s</p>
+            <p class="p-aside-catalogo">1 0 0 %</p>
+            <p class="p-aside-catalogo">d e</p>
+            <p class="p-aside-catalogo">f a b r i c a</p>
+          </aside>
+        </div>
+
+        <!--CONTENIDO PARA CONTACTOS-->
+
+        <div data-content id="contenido-03">
+          <h2 class="titulo-contenido-contactos-01">
+            Ponte en contacto para saber de mi
+          </h2>
+          <div class="contenido-objetos-contactos">
+            <div id="contenedor-celular">
+              <div id="camara-celular"></div>
+              <div id="contenedor-apps-celular">
+                <a href="#" class="link-contacto">
+                  <img
+                    src="img/IconsApps/facebook.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+                <a href="#" class="link-contacto">
+                  <img
+                    src="img/IconsApps/instagram.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+                <a href="#" class="link-contacto link-aplastado">
+                  <img
+                    src="img/IconsApps/gmail.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+                <a href="#" class="link-contacto">
+                  <img
+                    src="img/IconsApps/whatssap.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+                <a href="#" class="link-contacto">
+                  <img
+                    src="img/IconsApps/tik tok.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+                <a href="#" class="link-contacto link-aplastado">
+                  <img
+                    src="img/IconsApps/youtube.png"
+                    alt=""
+                    class="icon-apps-celular"
+                  />
+                </a>
+              </div>
+            </div>
+            <div id="contenedor-parrafo-imagen">
+              <p id="p-contactos-01">
+                Soy SubnormaLynx, un desarrollador web que tiene una gran
+                capacidad para crear paginas web complejas o simples de tipos
+                como eccomers, blogs y mas.
+              </p>
+              <img src="img/logo/logo.png" alt="" id="logo-contactos" />
+              <p id="p-contactos-02">
+                Esta pagina solo es una representacion de mi habilidad creativa,
+                interactiva y de efectividad ante estos trabajo.<br /><br />
+                Aqui te dejo mis contactos para que puedas obtener una mejor
+                atencion a cuanto detalles de mis trabajo, preguntas y quejas.
+                <br /><br />
+                Oh solo para saber mas sobre mi como persona y conocerme.
+              </p>
+            </div>
+            <div id="contenedor-apps-celular-responsive">
+              <a href="#"
+                ><img
+                  src="img/IconsApps/facebook.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+              <a href="#"
+                ><img
+                  src="img/IconsApps/instagram.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+              <a href="#"
+                ><img
+                  src="img/IconsApps/gmail.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+              <a href="#"
+                ><img
+                  src="img/IconsApps/whatssap.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+              <a href="#"
+                ><img
+                  src="img/IconsApps/tik tok.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+              <a href="#"
+                ><img
+                  src="img/IconsApps/youtube.png"
+                  alt=""
+                  class="icon-apps-celular"
+              /></a>
+            </div>
+
+            <div id="margen-final-abajo-contactos"></div>
+          </div>
+        </div>
+      </div>
+      <footer id="footer-normal">© SubnormaLynx 2023</footer>
     </div>
-    <footer id="footer-normal">Copyright © KeisubCode</footer>
 </body>
 </html>
